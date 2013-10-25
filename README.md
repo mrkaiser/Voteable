@@ -6,6 +6,7 @@
 $ cd Vote
 $ ./sbt
 > container:start
+> ~ ;copy-resources;aux-compile
 > browse
 ```
 
