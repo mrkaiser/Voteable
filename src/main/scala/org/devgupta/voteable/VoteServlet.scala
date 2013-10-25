@@ -14,7 +14,7 @@ class VoteServlet extends VoteStack with JacksonJsonSupport{
 
   //some hacked up models
   case class Voteable(id:String,var votes:Int)
-  case class Vote(voteOn:String)
+
   implicit def orderedVoteable(v : Voteable): Ordered[Voteable] = new Ordered[Voteable]{
     def compare(other: Voteable) = v.votes.compare(other.votes)
   }
@@ -45,7 +45,7 @@ class VoteServlet extends VoteStack with JacksonJsonSupport{
     println("Got to Vote!")
     val vote = parsedBody.extract[Vote]
     queue.find(x => x.id.compare(vote.voteOn) == 0 ) match {
-      case Some(vote:Voteable) => vote.votes += 1
+      case Some(voteQ:Voteable) => voteQ.votes += 1
       case None => queue.enqueue(Voteable(vote.voteOn,1))
     }
 
