@@ -6,7 +6,20 @@
 html
   head
     title= title
+    link(rel='stylesheet'
+        href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+
   body
     #content
       h1= headline
       != body
+      iframe(
+        width='560'
+        height='315'
+        src='//www.youtube.com/embed/g1v91Yo2rp'
+        frameborder='0'
+        allowfullscreen)
+
+
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
