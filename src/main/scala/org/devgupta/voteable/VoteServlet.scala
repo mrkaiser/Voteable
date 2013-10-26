@@ -53,8 +53,12 @@ class VoteServlet extends VoteStack with JacksonJsonSupport{
     queue = queue.clone()
   }
 
-  get("/top") {
+  get("/pop") {
     if(queue.size != 0) queue.dequeue else None
+  }
+
+  get("/peek/:n"){
+    queue.take({params("n")}.toInt)
   }
   
 }
