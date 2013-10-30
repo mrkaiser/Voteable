@@ -61,13 +61,5 @@ class VoteServlet extends VoteStack with JacksonJsonSupport{
     queue.take({params("n")}.toInt)
   }
 
-  get("/"){
-    contentType="text/html"
-
-    val source = scala.io.Source.fromFile("/index.html")
-    val lines = source.mkString
-    //source.close()
-    lines
-  }
   
 }
