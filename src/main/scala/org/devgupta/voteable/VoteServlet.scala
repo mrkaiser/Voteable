@@ -28,6 +28,18 @@ class VoteServlet extends VoteStack with JacksonJsonSupport{
   before() {
     contentType = formats("json")
   }
+
+  get("/") {
+    contentType="text/html"
+    <html>
+      <body>
+        <h1>Welcome Voters!</h1>
+        Vote <a href="hello-scalate">Here</a>.
+      </body>
+    </html>
+  }
+
+
   get("/vote/:id") {
     //"Voted on"+{params("id")}
 
