@@ -3,18 +3,20 @@
 -@ val body: String
 
 !!!
-html(ng-app)
+html
   head
     title= title
     link(rel='stylesheet'
         href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')    
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
 
   body
     #content
       h1= headline
       != body
       div(ng-app='vote')
-        div(ng-controller='PlayerCtrl')
+        div
         iframe(
           width='560'
           height='315'
@@ -22,10 +24,12 @@ html(ng-app)
           frameborder='0'
           allowfullscreen)
         div(ng-controller='ListCtrl')
-        ul(ng-repeat='playable in queue')
-          li="{{playable.id}}"
+        ul
+          li(ng-repeat='queable in queue')
+            |{{queable.id}}
 
-    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
+
+    
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
-    script(src='/listctrl.js')
-    script(src='/playerctrl.jsl')
+    script(src='/js/listctrl.js')
+    
