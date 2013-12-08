@@ -11,11 +11,11 @@ html
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')    
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
 
-  body
+  body(class="col-md-6 col-md-offset-3")
     #content
       h1= headline
       != body
-      div(ng-app='vote')
+      div(ng-app='vote' )
         div
         iframe(
           width='560'
@@ -24,9 +24,9 @@ html
           frameborder='0'
           allowfullscreen)
         div(ng-controller='ListCtrl')
-          ul
-            li(ng-repeat='queable in queue')
-              |{{queable.id}}|{{queable.votes}}
+          ol
+            li(ng-repeat='queable in queue' class="list-unstyled")
+              |<h3>{{queable.id}}|{{queable.votes}}</h3>
 
 
     
